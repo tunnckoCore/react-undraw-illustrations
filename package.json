@@ -11,7 +11,8 @@
     "lib"
   ],
   "dependencies": {
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
