@@ -1,6 +1,6 @@
 {
-  "name": "react-undraw-illustrations",
-  "version": "2.0.3",
+  "name": "@tunnckocore/react-undraw",
+  "version": "0.1.0",
   "description": "unDraw: MIT licensed illustrations for every project you can imagine and create...for React!",
   "private": false,
   "url": "http://undraw.co",
@@ -10,19 +10,17 @@
     "src",
     "lib"
   ],
-  "dependencies": {
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.7.0"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "lib": "babel src/node_modules --out-dir lib --copy-files",
-    "test": "node scripts/test.js --env=jsdom",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "convert": "node scripts/convert"
-  },
+    "build": "babel src/ -d dist --presets @babel/preset-env --presets @babel/preset-react --no-babelrc --copy-files"
+  },  
   "keywords": [
     "undraw",
     "illustrations",
@@ -33,56 +31,16 @@
   ],
   "author": "Graeme Fulton <graeme@prototypr.io> (https://prototypr.io/home)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GraemeFulton/react-undraw-illustrations"
-  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
-    ],
-    "testEnvironment": "node",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "mjs",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
